@@ -11,7 +11,8 @@
     <SignManifests>false</SignManifests>
     <ApplicationIcon>icons\BlueBrickIcon.ico</ApplicationIcon>
     <TargetZone>LocalIntranet</TargetZone>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFrameworks>net8.0-windows</TargetFrameworks>
+	<UseWindowsForms>true</UseWindowsForms>
     <FileUpgradeFlags />
     <UpgradeBackupLocation />
     <PublishUrl>H:\temp\PublishBB\</PublishUrl>
