@@ -1,15 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{54CBCBEE-A623-461D-90E6-2A6752062A90}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BlueBrick</RootNamespace>
-    <AssemblyName>BlueBrick</AssemblyName>
     <StartupObject>BlueBrick.Program</StartupObject>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <ManifestCertificateThumbprint>9A2553C210508483ADFF3955A7E66C26068642D5</ManifestCertificateThumbprint>
@@ -18,13 +11,9 @@
     <SignManifests>false</SignManifests>
     <ApplicationIcon>icons\BlueBrickIcon.ico</ApplicationIcon>
     <TargetZone>LocalIntranet</TargetZone>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>2.0</OldToolsVersion>
-    <TargetFrameworkProfile />
+    <TargetFramework>net48</TargetFramework>
+    <FileUpgradeFlags />
+    <UpgradeBackupLocation />
     <PublishUrl>H:\temp\PublishBB\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -42,713 +31,610 @@
     <ApplicationVersion>0.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <AssemblyTitle>BlueBrick</AssemblyTitle>
+    <Company>bluebrick.lswproject.com</Company>
+    <Product>BlueBrick</Product>
+    <Description>Layout Editor for Brick Events.</Description>
+    <Copyright>Copyright © Alban NANTY 2010</Copyright>
+    <AssemblyVersion>1.9.1.0</AssemblyVersion>
+    <FileVersion>1.9.1.0</FileVersion>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutBox.cs">
+    <Compile Update="AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutBox.Designer.cs">
+    <Compile Update="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Actions\Action.cs" />
-    <Compile Include="Actions\ActionManager.cs" />
-    <Compile Include="Actions\Area\AddArea.cs" />
-    <Compile Include="Actions\Area\DeleteArea.cs" />
-    <Compile Include="Actions\Area\MoveArea.cs" />
-    <Compile Include="Actions\Bricks\AddConnectBrick.cs" />
-    <Compile Include="Actions\Bricks\AddConnectGroup.cs" />
-    <Compile Include="Actions\Bricks\BringBrickToFront.cs" />
-    <Compile Include="Actions\Bricks\ChangeBrickElevation.cs" />
-    <Compile Include="Actions\Bricks\DuplicateBrick.cs" />
-    <Compile Include="Actions\Bricks\MoveBrick.cs" />
-    <Compile Include="Actions\Bricks\ReplaceBrick.cs" />
-    <Compile Include="Actions\Bricks\RotateAndMoveBrick.cs" />
-    <Compile Include="Actions\Bricks\RotateBrick.cs" />
-    <Compile Include="Actions\Bricks\RotateBrickOnPivotBrick.cs" />
-    <Compile Include="Actions\Bricks\SendBrickToBack.cs" />
-    <Compile Include="Actions\Grid\MoveGridOrigin.cs" />
-    <Compile Include="Actions\Items\ChangeItemOrder.cs" />
-    <Compile Include="Actions\Items\GroupItems.cs" />
-    <Compile Include="Actions\Items\DuplicateItems.cs" />
-    <Compile Include="Actions\Items\MoveItems.cs" />
-    <Compile Include="Actions\Items\RotateItems.cs" />
-    <Compile Include="Actions\Items\UngroupItems.cs" />
-    <Compile Include="Actions\Layers\AddLayer.cs" />
-    <Compile Include="Actions\Bricks\AddBrick.cs" />
-    <Compile Include="Actions\Layers\ChangeLayerOption.cs" />
-    <Compile Include="Actions\Layers\HideLayer.cs" />
-    <Compile Include="Actions\Layers\MoveLayerDown.cs" />
-    <Compile Include="Actions\Layers\MoveLayerUp.cs" />
-    <Compile Include="Actions\Layers\RemoveLayer.cs" />
-    <Compile Include="Actions\Layers\SelectLayer.cs" />
-    <Compile Include="Actions\Layers\ShowLayer.cs" />
-    <Compile Include="Actions\Bricks\DeleteBrick.cs" />
-    <Compile Include="Actions\Maps\ChangeBackgroundColor.cs" />
-    <Compile Include="Actions\Maps\ChangeGeneralInfo.cs" />
-    <Compile Include="Actions\Maps\ChangeMapAppearance.cs" />
-    <Compile Include="Actions\Rulers\AddRuler.cs" />
-    <Compile Include="Actions\Rulers\AttachRulerToBrick.cs" />
-    <Compile Include="Actions\Rulers\BringRulerToFront.cs" />
-    <Compile Include="Actions\Rulers\DeleteRuler.cs" />
-    <Compile Include="Actions\Rulers\DetachRuler.cs" />
-    <Compile Include="Actions\Rulers\DuplicateRuler.cs" />
-    <Compile Include="Actions\Rulers\EditRuler.cs" />
-    <Compile Include="Actions\Rulers\MoveRulerControlPoint.cs" />
-    <Compile Include="Actions\Rulers\MoveRulers.cs" />
-    <Compile Include="Actions\Rulers\RotateRulers.cs" />
-    <Compile Include="Actions\Rulers\ScaleRuler.cs" />
-    <Compile Include="Actions\Rulers\SendRulerToBack.cs" />
-    <Compile Include="Actions\Texts\BringTextToFront.cs" />
-    <Compile Include="Actions\Texts\DuplicateText.cs" />
-    <Compile Include="Actions\Texts\AddText.cs" />
-    <Compile Include="Actions\Texts\EditText.cs" />
-    <Compile Include="Actions\Texts\MoveText.cs" />
-    <Compile Include="Actions\Texts\DeleteText.cs" />
-    <Compile Include="Actions\Texts\RotateText.cs" />
-    <Compile Include="Actions\Texts\SendTextToBack.cs" />
-    <Compile Include="Budget\Budget.cs" />
-    <Compile Include="DownloadCenterForm.cs">
+    <Compile Update="DownloadCenterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DownloadCenterForm.Designer.cs">
+    <Compile Update="DownloadCenterForm.Designer.cs">
       <DependentUpon>DownloadCenterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditBrickForm.cs">
+    <Compile Update="EditBrickForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditBrickForm.Designer.cs">
+    <Compile Update="EditBrickForm.Designer.cs">
       <DependentUpon>EditBrickForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditRulerForm.cs">
+    <Compile Update="EditRulerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditRulerForm.Designer.cs">
+    <Compile Update="EditRulerForm.Designer.cs">
       <DependentUpon>EditRulerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExportImageForm.cs">
+    <Compile Update="ExportImageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ExportImageForm.Designer.cs">
+    <Compile Update="ExportImageForm.Designer.cs">
       <DependentUpon>ExportImageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FindForm.cs">
+    <Compile Update="FindForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FindForm.Designer.cs">
+    <Compile Update="FindForm.Designer.cs">
       <DependentUpon>FindForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ForgetableMessageBox.cs">
+    <Compile Update="ForgetableMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ForgetableMessageBox.Designer.cs">
+    <Compile Update="ForgetableMessageBox.Designer.cs">
       <DependentUpon>ForgetableMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="LayerTextOptionForm.cs">
+    <Compile Update="LayerTextOptionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LayerTextOptionForm.Designer.cs">
+    <Compile Update="LayerTextOptionForm.Designer.cs">
       <DependentUpon>LayerTextOptionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LayerRulerPanel.cs">
+    <Compile Update="LayerRulerPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LibraryPackageSourceForm.cs">
+    <Compile Update="LibraryPackageSourceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LibraryPackageSourceForm.Designer.cs">
+    <Compile Update="LibraryPackageSourceForm.Designer.cs">
       <DependentUpon>LibraryPackageSourceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MapData\RulerAttachementSet.cs" />
-    <Compile Include="MapData\LayerBrickBrick.cs" />
-    <Compile Include="MapData\LayerRuler.cs" />
-    <Compile Include="MapData\LayerRulerItem.cs" />
-    <Compile Include="MapData\LayerTextCell.cs" />
-    <Compile Include="MapData\Tools\AlphabeticIndex.cs" />
-    <Compile Include="MapData\Tools\Surface.cs" />
-    <Compile Include="MapData\Tools\Distance.cs" />
-    <Compile Include="PartListView.cs">
+    <Compile Update="PartListView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="PartUsageView.cs">
+    <Compile Update="PartUsageView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="PartUsageView.Designer.cs">
+    <Compile Update="PartUsageView.Designer.cs">
       <DependentUpon>PartUsageView.cs</DependentUpon>
     </Compile>
-    <Compile Include="PreferencesForm.cs">
+    <Compile Update="PreferencesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PreferencesForm.Designer.cs">
+    <Compile Update="PreferencesForm.Designer.cs">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Actions\Bricks\FlexMove.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
+    <Compile Update="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SaveGroupNameForm.cs">
+    <Compile Update="SaveGroupNameForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SaveGroupNameForm.Designer.cs">
+    <Compile Update="SaveGroupNameForm.Designer.cs">
       <DependentUpon>SaveGroupNameForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SaveLoad\LanguageManager.cs" />
-    <Compile Include="LayerAreaOptionForm.cs">
+    <Compile Update="LayerAreaOptionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LayerAreaOptionForm.Designer.cs">
+    <Compile Update="LayerAreaOptionForm.Designer.cs">
       <DependentUpon>LayerAreaOptionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LayerAreaPanel.cs">
+    <Compile Update="LayerAreaPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LayerBrickOptionForm.cs">
+    <Compile Update="LayerBrickOptionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LayerBrickOptionForm.Designer.cs">
+    <Compile Update="LayerBrickOptionForm.Designer.cs">
       <DependentUpon>LayerBrickOptionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LayerBrickPanel.cs">
+    <Compile Update="LayerBrickPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LayerGridOptionForm.cs">
+    <Compile Update="LayerGridOptionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LayerGridOptionForm.Designer.cs">
+    <Compile Update="LayerGridOptionForm.Designer.cs">
       <DependentUpon>LayerGridOptionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LayerGridPanel.cs">
+    <Compile Update="LayerGridPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LayerPanel.cs">
+    <Compile Update="LayerPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LayerStackPanel.cs">
+    <Compile Update="LayerStackPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LayerTextPanel.cs">
+    <Compile Update="LayerTextPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LoadErrorForm.cs">
+    <Compile Update="LoadErrorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoadErrorForm.Designer.cs">
+    <Compile Update="LoadErrorForm.Designer.cs">
       <DependentUpon>LoadErrorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Update="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainSplitContainer.cs">
+    <Compile Update="MainSplitContainer.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MapData\Tools\AStar.cs" />
-    <Compile Include="MapData\BrickLibrary.cs" />
-    <Compile Include="MapData\Tools\ElectricCircuitChecker.cs" />
-    <Compile Include="MapData\FreeConnectionSet.cs" />
-    <Compile Include="MapData\Tools\IKSolver.cs" />
-    <Compile Include="MapData\LayerArea.cs" />
-    <Compile Include="MapData\LayerBrick.cs" />
-    <Compile Include="MapData\LayerText.cs" />
-    <Compile Include="SaveLoad\LDrawReadWrite.cs" />
-    <Compile Include="SaveLoad\XmlReadWrite.cs" />
-    <Compile Include="MapPanel.cs">
+    <Compile Update="MapPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MapData\Layer.cs" />
-    <Compile Include="MapData\LayerGrid.cs" />
-    <Compile Include="MapData\Map.cs" />
-    <Compile Include="PartLibraryPanel.cs">
+    <Compile Update="PartLibraryPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="PartLibraryPanel.Designer.cs">
+    <Compile Update="PartLibraryPanel.Designer.cs">
       <DependentUpon>PartLibraryPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AboutBox.de.resx">
+    <EmbeddedResource Update="AboutBox.de.resx">
       <SubType>Designer</SubType>
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AboutBox.es.resx">
+    <EmbeddedResource Update="AboutBox.es.resx">
       <SubType>Designer</SubType>
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AboutBox.fr.resx">
+    <EmbeddedResource Update="AboutBox.fr.resx">
       <SubType>Designer</SubType>
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AboutBox.it.resx">
+    <EmbeddedResource Update="AboutBox.it.resx">
       <SubType>Designer</SubType>
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AboutBox.nl.resx">
+    <EmbeddedResource Update="AboutBox.nl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AboutBox.pt.resx">
+    <EmbeddedResource Update="AboutBox.pt.resx">
       <SubType>Designer</SubType>
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AboutBox.resx">
+    <EmbeddedResource Update="AboutBox.resx">
       <SubType>Designer</SubType>
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditBrickForm.de.resx">
+    <EmbeddedResource Update="EditBrickForm.de.resx">
       <DependentUpon>EditBrickForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditBrickForm.fr.resx">
+    <EmbeddedResource Update="EditBrickForm.fr.resx">
       <DependentUpon>EditBrickForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditBrickForm.it.resx">
+    <EmbeddedResource Update="EditBrickForm.it.resx">
       <DependentUpon>EditBrickForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditBrickForm.nl.resx">
+    <EmbeddedResource Update="EditBrickForm.nl.resx">
       <DependentUpon>EditBrickForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditBrickForm.pt.resx">
+    <EmbeddedResource Update="EditBrickForm.pt.resx">
       <DependentUpon>EditBrickForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditBrickForm.resx">
+    <EmbeddedResource Update="EditBrickForm.resx">
       <DependentUpon>EditBrickForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditRulerForm.de.resx">
+    <EmbeddedResource Update="EditRulerForm.de.resx">
       <DependentUpon>EditRulerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditRulerForm.es.resx">
+    <EmbeddedResource Update="EditRulerForm.es.resx">
       <DependentUpon>EditRulerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditRulerForm.fr.resx">
+    <EmbeddedResource Update="EditRulerForm.fr.resx">
       <DependentUpon>EditRulerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditRulerForm.it.resx">
+    <EmbeddedResource Update="EditRulerForm.it.resx">
       <DependentUpon>EditRulerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditRulerForm.nl.resx">
+    <EmbeddedResource Update="EditRulerForm.nl.resx">
       <DependentUpon>EditRulerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditRulerForm.pt.resx">
+    <EmbeddedResource Update="EditRulerForm.pt.resx">
       <DependentUpon>EditRulerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditRulerForm.resx">
+    <EmbeddedResource Update="EditRulerForm.resx">
       <DependentUpon>EditRulerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditTextForm.de.resx">
+    <EmbeddedResource Update="EditTextForm.de.resx">
       <SubType>Designer</SubType>
       <DependentUpon>EditTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditTextForm.es.resx">
+    <EmbeddedResource Update="EditTextForm.es.resx">
       <SubType>Designer</SubType>
       <DependentUpon>EditTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditTextForm.fr.resx">
+    <EmbeddedResource Update="EditTextForm.fr.resx">
       <SubType>Designer</SubType>
       <DependentUpon>EditTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditTextForm.nl.resx">
+    <EmbeddedResource Update="EditTextForm.nl.resx">
       <DependentUpon>EditTextForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditTextForm.pt.resx">
+    <EmbeddedResource Update="EditTextForm.pt.resx">
       <SubType>Designer</SubType>
       <DependentUpon>EditTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExportImageForm.de.resx">
+    <EmbeddedResource Update="ExportImageForm.de.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ExportImageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExportImageForm.es.resx">
+    <EmbeddedResource Update="ExportImageForm.es.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ExportImageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExportImageForm.fr.resx">
+    <EmbeddedResource Update="ExportImageForm.fr.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ExportImageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExportImageForm.nl.resx">
+    <EmbeddedResource Update="ExportImageForm.nl.resx">
       <DependentUpon>ExportImageForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExportImageForm.pt.resx">
+    <EmbeddedResource Update="ExportImageForm.pt.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ExportImageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExportImageForm.resx">
+    <EmbeddedResource Update="ExportImageForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ExportImageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ForgetableMessageBox.de.resx">
+    <EmbeddedResource Update="ForgetableMessageBox.de.resx">
       <DependentUpon>ForgetableMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ForgetableMessageBox.es.resx">
+    <EmbeddedResource Update="ForgetableMessageBox.es.resx">
       <DependentUpon>ForgetableMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ForgetableMessageBox.fr.resx">
+    <EmbeddedResource Update="ForgetableMessageBox.fr.resx">
       <DependentUpon>ForgetableMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ForgetableMessageBox.it.resx">
+    <EmbeddedResource Update="ForgetableMessageBox.it.resx">
       <DependentUpon>ForgetableMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ForgetableMessageBox.nl.resx">
+    <EmbeddedResource Update="ForgetableMessageBox.nl.resx">
       <DependentUpon>ForgetableMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ForgetableMessageBox.pt.resx">
+    <EmbeddedResource Update="ForgetableMessageBox.pt.resx">
       <DependentUpon>ForgetableMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ForgetableMessageBox.resx">
+    <EmbeddedResource Update="ForgetableMessageBox.resx">
       <DependentUpon>ForgetableMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerTextOptionForm.de.resx">
+    <EmbeddedResource Update="LayerTextOptionForm.de.resx">
       <DependentUpon>LayerTextOptionForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerTextOptionForm.es.resx">
+    <EmbeddedResource Update="LayerTextOptionForm.es.resx">
       <DependentUpon>LayerTextOptionForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerTextOptionForm.fr.resx">
+    <EmbeddedResource Update="LayerTextOptionForm.fr.resx">
       <DependentUpon>LayerTextOptionForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerTextOptionForm.it.resx">
+    <EmbeddedResource Update="LayerTextOptionForm.it.resx">
       <DependentUpon>LayerTextOptionForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerTextOptionForm.nl.resx">
+    <EmbeddedResource Update="LayerTextOptionForm.nl.resx">
       <DependentUpon>LayerTextOptionForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerTextOptionForm.no.resx">
+    <EmbeddedResource Update="LayerTextOptionForm.no.resx">
       <DependentUpon>LayerTextOptionForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerTextOptionForm.pt.resx">
+    <EmbeddedResource Update="LayerTextOptionForm.pt.resx">
       <DependentUpon>LayerTextOptionForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerTextOptionForm.resx">
+    <EmbeddedResource Update="LayerTextOptionForm.resx">
       <DependentUpon>LayerTextOptionForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerTextOptionForm.sv.resx">
+    <EmbeddedResource Update="LayerTextOptionForm.sv.resx">
       <DependentUpon>LayerTextOptionForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="LibraryPackageSourceForm.de.resx">
+    <EmbeddedResource Update="LibraryPackageSourceForm.de.resx">
       <DependentUpon>LibraryPackageSourceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LibraryPackageSourceForm.es.resx">
+    <EmbeddedResource Update="LibraryPackageSourceForm.es.resx">
       <DependentUpon>LibraryPackageSourceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LibraryPackageSourceForm.fr.resx">
+    <EmbeddedResource Update="LibraryPackageSourceForm.fr.resx">
       <DependentUpon>LibraryPackageSourceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LibraryPackageSourceForm.it.resx">
+    <EmbeddedResource Update="LibraryPackageSourceForm.it.resx">
       <DependentUpon>LibraryPackageSourceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LibraryPackageSourceForm.nl.resx">
+    <EmbeddedResource Update="LibraryPackageSourceForm.nl.resx">
       <DependentUpon>LibraryPackageSourceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LibraryPackageSourceForm.pt.resx">
+    <EmbeddedResource Update="LibraryPackageSourceForm.pt.resx">
       <DependentUpon>LibraryPackageSourceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LibraryPackageSourceForm.resx">
+    <EmbeddedResource Update="LibraryPackageSourceForm.resx">
       <DependentUpon>LibraryPackageSourceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PartListView.resx">
+    <EmbeddedResource Update="PartListView.resx">
       <DependentUpon>PartListView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PartUsageView.de.resx">
+    <EmbeddedResource Update="PartUsageView.de.resx">
       <DependentUpon>PartUsageView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PartUsageView.es.resx">
+    <EmbeddedResource Update="PartUsageView.es.resx">
       <DependentUpon>PartUsageView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PartUsageView.it.resx">
+    <EmbeddedResource Update="PartUsageView.it.resx">
       <DependentUpon>PartUsageView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PartUsageView.nl.resx">
+    <EmbeddedResource Update="PartUsageView.nl.resx">
       <DependentUpon>PartUsageView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PartUsageView.no.resx">
+    <EmbeddedResource Update="PartUsageView.no.resx">
       <DependentUpon>PartUsageView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PartUsageView.pt.resx">
+    <EmbeddedResource Update="PartUsageView.pt.resx">
       <DependentUpon>PartUsageView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PartUsageView.resx">
+    <EmbeddedResource Update="PartUsageView.resx">
       <DependentUpon>PartUsageView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PartUsageView.fr.resx">
+    <EmbeddedResource Update="PartUsageView.fr.resx">
       <DependentUpon>PartUsageView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PartUsageView.sv.resx">
+    <EmbeddedResource Update="PartUsageView.sv.resx">
       <DependentUpon>PartUsageView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PreferencesForm.de.resx">
+    <EmbeddedResource Update="PreferencesForm.de.resx">
       <SubType>Designer</SubType>
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PreferencesForm.es.resx">
+    <EmbeddedResource Update="PreferencesForm.es.resx">
       <SubType>Designer</SubType>
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PreferencesForm.fr.resx">
+    <EmbeddedResource Update="PreferencesForm.fr.resx">
       <SubType>Designer</SubType>
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PreferencesForm.nl.resx">
+    <EmbeddedResource Update="PreferencesForm.nl.resx">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="PreferencesForm.pt.resx">
+    <EmbeddedResource Update="PreferencesForm.pt.resx">
       <SubType>Designer</SubType>
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PreferencesForm.resx">
+    <EmbeddedResource Update="PreferencesForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerAreaOptionForm.de.resx">
+    <EmbeddedResource Update="LayerAreaOptionForm.de.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerAreaOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerAreaOptionForm.es.resx">
+    <EmbeddedResource Update="LayerAreaOptionForm.es.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerAreaOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerAreaOptionForm.fr.resx">
+    <EmbeddedResource Update="LayerAreaOptionForm.fr.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerAreaOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerAreaOptionForm.nl.resx">
+    <EmbeddedResource Update="LayerAreaOptionForm.nl.resx">
       <DependentUpon>LayerAreaOptionForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerAreaOptionForm.pt.resx">
+    <EmbeddedResource Update="LayerAreaOptionForm.pt.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerAreaOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerAreaOptionForm.resx">
+    <EmbeddedResource Update="LayerAreaOptionForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerAreaOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerBrickOptionForm.de.resx">
+    <EmbeddedResource Update="LayerBrickOptionForm.de.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerBrickOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerBrickOptionForm.es.resx">
+    <EmbeddedResource Update="LayerBrickOptionForm.es.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerBrickOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerBrickOptionForm.fr.resx">
+    <EmbeddedResource Update="LayerBrickOptionForm.fr.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerBrickOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerBrickOptionForm.nl.resx">
+    <EmbeddedResource Update="LayerBrickOptionForm.nl.resx">
       <DependentUpon>LayerBrickOptionForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerBrickOptionForm.pt.resx">
+    <EmbeddedResource Update="LayerBrickOptionForm.pt.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerBrickOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerBrickOptionForm.resx">
+    <EmbeddedResource Update="LayerBrickOptionForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerBrickOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerGridOptionForm.de.resx">
+    <EmbeddedResource Update="LayerGridOptionForm.de.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerGridOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerGridOptionForm.es.resx">
+    <EmbeddedResource Update="LayerGridOptionForm.es.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerGridOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerGridOptionForm.fr.resx">
+    <EmbeddedResource Update="LayerGridOptionForm.fr.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerGridOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerGridOptionForm.nl.resx">
+    <EmbeddedResource Update="LayerGridOptionForm.nl.resx">
       <DependentUpon>LayerGridOptionForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerGridOptionForm.pt.resx">
+    <EmbeddedResource Update="LayerGridOptionForm.pt.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerGridOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerGridOptionForm.resx">
+    <EmbeddedResource Update="LayerGridOptionForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerGridOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerGridPanel.resx">
+    <EmbeddedResource Update="LayerGridPanel.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerGridPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerPanel.resx">
+    <EmbeddedResource Update="LayerPanel.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerStackPanel.resx">
+    <EmbeddedResource Update="LayerStackPanel.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerStackPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.de.resx">
+    <EmbeddedResource Update="MainForm.de.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.es.resx">
+    <EmbeddedResource Update="MainForm.es.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.fr.resx">
+    <EmbeddedResource Update="MainForm.fr.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.nl.resx">
+    <EmbeddedResource Update="MainForm.nl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.pt.resx">
+    <EmbeddedResource Update="MainForm.pt.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Update="MainForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MapPanel.de.resx">
+    <EmbeddedResource Update="MapPanel.de.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MapPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MapPanel.es.resx">
+    <EmbeddedResource Update="MapPanel.es.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MapPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MapPanel.fr.resx">
+    <EmbeddedResource Update="MapPanel.fr.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MapPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MapPanel.nl.resx">
+    <EmbeddedResource Update="MapPanel.nl.resx">
       <DependentUpon>MapPanel.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="MapPanel.pt.resx">
+    <EmbeddedResource Update="MapPanel.pt.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MapPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MapPanel.resx">
+    <EmbeddedResource Update="MapPanel.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MapPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PartLibraryPanel.resx">
+    <EmbeddedResource Update="PartLibraryPanel.resx">
       <SubType>Designer</SubType>
       <DependentUpon>PartLibraryPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.de.resx">
+    <EmbeddedResource Update="Properties\Resources.de.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
+    <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.fr.resx">
+    <EmbeddedResource Update="Properties\Resources.fr.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditTextForm.resx">
+    <EmbeddedResource Update="EditTextForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>EditTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.nl.resx">
+    <EmbeddedResource Update="Properties\Resources.nl.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.pt.resx">
+    <EmbeddedResource Update="Properties\Resources.pt.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.es.resx">
+    <EmbeddedResource Update="Properties\Resources.es.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SaveGroupNameForm.de.resx">
+    <EmbeddedResource Update="SaveGroupNameForm.de.resx">
       <DependentUpon>SaveGroupNameForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SaveGroupNameForm.es.resx">
+    <EmbeddedResource Update="SaveGroupNameForm.es.resx">
       <DependentUpon>SaveGroupNameForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SaveGroupNameForm.fr.resx">
+    <EmbeddedResource Update="SaveGroupNameForm.fr.resx">
       <DependentUpon>SaveGroupNameForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SaveGroupNameForm.it.resx">
+    <EmbeddedResource Update="SaveGroupNameForm.it.resx">
       <DependentUpon>SaveGroupNameForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SaveGroupNameForm.nl.resx">
+    <EmbeddedResource Update="SaveGroupNameForm.nl.resx">
       <DependentUpon>SaveGroupNameForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SaveGroupNameForm.pt.resx">
+    <EmbeddedResource Update="SaveGroupNameForm.pt.resx">
       <DependentUpon>SaveGroupNameForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SaveGroupNameForm.resx">
+    <EmbeddedResource Update="SaveGroupNameForm.resx">
       <DependentUpon>SaveGroupNameForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SplashScreen.resx">
+    <EmbeddedResource Update="SplashScreen.resx">
       <SubType>Designer</SubType>
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-      <SubType>
-      </SubType>
+      <SubType />
     </None>
-    <Compile Include="Properties\Settings.Designer.cs">
+    <Compile Update="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="EditTextForm.cs">
+    <Compile Update="EditTextForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditTextForm.Designer.cs">
+    <Compile Update="EditTextForm.Designer.cs">
       <DependentUpon>EditTextForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SaveLoad\SaveLoadManager.cs" />
-    <Compile Include="SplashScreen.cs">
+    <Compile Update="SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SplashScreen.Designer.cs">
+    <Compile Update="SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -771,35 +657,6 @@
     <None Include="icons\SnapGridOn.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <PublishFile Include="fr\BlueBrick.resources">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Satellite</FileType>
-    </PublishFile>
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 2.0</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="icons\alignright.bmp" />
   </ItemGroup>
   <ItemGroup>
@@ -812,11 +669,11 @@
     <Content Include="bin\Release\ReadMe.txt" />
     <None Include="icons\hideHullIcon.bmp" />
     <None Include="icons\trash.gif" />
-    <EmbeddedResource Include="AboutBox.no.resx">
+    <EmbeddedResource Update="AboutBox.no.resx">
       <SubType>Designer</SubType>
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AboutBox.sv.resx">
+    <EmbeddedResource Update="AboutBox.sv.resx">
       <SubType>Designer</SubType>
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -844,7 +701,6 @@
     <Content Include="icons\BlueBrickIcon.ico" />
     <Content Include="icons\BringToFront.bmp" />
     <None Include="icons\PartForOptionPreview.bmp" />
-    <BaseApplicationManifest Include="Properties\app.manifest" />
     <None Include="icons\filterAllTabs.bmp" />
     <None Include="icons\filterOneTab.bmp" />
     <Content Include="icons\newlayerRuler.bmp" />
@@ -857,226 +713,218 @@
     <EmbeddedResource Include="Cursor\TextDuplicateCursor.cur" />
     <EmbeddedResource Include="Cursor\BrickArrowCursor.cur" />
     <EmbeddedResource Include="Cursor\BrickDuplicateCursor.cur" />
-    <EmbeddedResource Include="DownloadCenterForm.de.resx">
+    <EmbeddedResource Update="DownloadCenterForm.de.resx">
       <SubType>Designer</SubType>
       <DependentUpon>DownloadCenterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DownloadCenterForm.es.resx">
+    <EmbeddedResource Update="DownloadCenterForm.es.resx">
       <SubType>Designer</SubType>
       <DependentUpon>DownloadCenterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DownloadCenterForm.fr.resx">
+    <EmbeddedResource Update="DownloadCenterForm.fr.resx">
       <SubType>Designer</SubType>
       <DependentUpon>DownloadCenterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DownloadCenterForm.it.resx">
+    <EmbeddedResource Update="DownloadCenterForm.it.resx">
       <SubType>Designer</SubType>
       <DependentUpon>DownloadCenterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DownloadCenterForm.nl.resx">
+    <EmbeddedResource Update="DownloadCenterForm.nl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>DownloadCenterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DownloadCenterForm.no.resx">
+    <EmbeddedResource Update="DownloadCenterForm.no.resx">
       <SubType>Designer</SubType>
       <DependentUpon>DownloadCenterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DownloadCenterForm.pt.resx">
+    <EmbeddedResource Update="DownloadCenterForm.pt.resx">
       <SubType>Designer</SubType>
       <DependentUpon>DownloadCenterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DownloadCenterForm.resx">
+    <EmbeddedResource Update="DownloadCenterForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>DownloadCenterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DownloadCenterForm.sv.resx">
+    <EmbeddedResource Update="DownloadCenterForm.sv.resx">
       <SubType>Designer</SubType>
       <DependentUpon>DownloadCenterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditTextForm.it.resx">
+    <EmbeddedResource Update="EditTextForm.it.resx">
       <SubType>Designer</SubType>
       <DependentUpon>EditTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditTextForm.no.resx">
+    <EmbeddedResource Update="EditTextForm.no.resx">
       <SubType>Designer</SubType>
       <DependentUpon>EditTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditTextForm.sv.resx">
+    <EmbeddedResource Update="EditTextForm.sv.resx">
       <SubType>Designer</SubType>
       <DependentUpon>EditTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExportImageForm.it.resx">
+    <EmbeddedResource Update="ExportImageForm.it.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ExportImageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExportImageForm.no.resx">
+    <EmbeddedResource Update="ExportImageForm.no.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ExportImageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExportImageForm.sv.resx">
+    <EmbeddedResource Update="ExportImageForm.sv.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ExportImageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FindForm.de.resx">
+    <EmbeddedResource Update="FindForm.de.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FindForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FindForm.es.resx">
+    <EmbeddedResource Update="FindForm.es.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FindForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FindForm.fr.resx">
+    <EmbeddedResource Update="FindForm.fr.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FindForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FindForm.it.resx">
+    <EmbeddedResource Update="FindForm.it.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FindForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FindForm.nl.resx">
+    <EmbeddedResource Update="FindForm.nl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FindForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FindForm.no.resx">
+    <EmbeddedResource Update="FindForm.no.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FindForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FindForm.pt.resx">
+    <EmbeddedResource Update="FindForm.pt.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FindForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FindForm.resx">
+    <EmbeddedResource Update="FindForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FindForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FindForm.sv.resx">
+    <EmbeddedResource Update="FindForm.sv.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FindForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PreferencesForm.it.resx">
+    <EmbeddedResource Update="PreferencesForm.it.resx">
       <SubType>Designer</SubType>
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PreferencesForm.no.resx">
+    <EmbeddedResource Update="PreferencesForm.no.resx">
       <SubType>Designer</SubType>
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PreferencesForm.sv.resx">
+    <EmbeddedResource Update="PreferencesForm.sv.resx">
       <SubType>Designer</SubType>
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerAreaOptionForm.it.resx">
+    <EmbeddedResource Update="LayerAreaOptionForm.it.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerAreaOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerAreaOptionForm.no.resx">
+    <EmbeddedResource Update="LayerAreaOptionForm.no.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerAreaOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerAreaOptionForm.sv.resx">
+    <EmbeddedResource Update="LayerAreaOptionForm.sv.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerAreaOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerBrickOptionForm.it.resx">
+    <EmbeddedResource Update="LayerBrickOptionForm.it.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerBrickOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerBrickOptionForm.no.resx">
+    <EmbeddedResource Update="LayerBrickOptionForm.no.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerBrickOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerBrickOptionForm.sv.resx">
+    <EmbeddedResource Update="LayerBrickOptionForm.sv.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerBrickOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerGridOptionForm.it.resx">
+    <EmbeddedResource Update="LayerGridOptionForm.it.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerGridOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerGridOptionForm.no.resx">
+    <EmbeddedResource Update="LayerGridOptionForm.no.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerGridOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerGridOptionForm.sv.resx">
+    <EmbeddedResource Update="LayerGridOptionForm.sv.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LayerGridOptionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoadErrorForm.de.resx">
+    <EmbeddedResource Update="LoadErrorForm.de.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LoadErrorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoadErrorForm.es.resx">
+    <EmbeddedResource Update="LoadErrorForm.es.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LoadErrorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoadErrorForm.fr.resx">
+    <EmbeddedResource Update="LoadErrorForm.fr.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LoadErrorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoadErrorForm.it.resx">
+    <EmbeddedResource Update="LoadErrorForm.it.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LoadErrorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoadErrorForm.nl.resx">
+    <EmbeddedResource Update="LoadErrorForm.nl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LoadErrorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoadErrorForm.no.resx">
+    <EmbeddedResource Update="LoadErrorForm.no.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LoadErrorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoadErrorForm.pt.resx">
+    <EmbeddedResource Update="LoadErrorForm.pt.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LoadErrorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoadErrorForm.resx">
+    <EmbeddedResource Update="LoadErrorForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LoadErrorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoadErrorForm.sv.resx">
+    <EmbeddedResource Update="LoadErrorForm.sv.resx">
       <SubType>Designer</SubType>
       <DependentUpon>LoadErrorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.it.resx">
+    <EmbeddedResource Update="MainForm.it.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.no.resx">
+    <EmbeddedResource Update="MainForm.no.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.sv.resx">
+    <EmbeddedResource Update="MainForm.sv.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MapPanel.it.resx">
+    <EmbeddedResource Update="MapPanel.it.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MapPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MapPanel.no.resx">
+    <EmbeddedResource Update="MapPanel.no.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MapPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MapPanel.sv.resx">
+    <EmbeddedResource Update="MapPanel.sv.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MapPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.it.resx">
+    <EmbeddedResource Update="Properties\Resources.it.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.no.resx">
+    <EmbeddedResource Update="Properties\Resources.no.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.sv.resx">
+    <EmbeddedResource Update="Properties\Resources.sv.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
